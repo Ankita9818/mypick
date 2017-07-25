@@ -1,0 +1,42 @@
+steps: Git branch ,rebase , merge
+1:  mkdir project1
+		mkdir project2
+2:  git branch staging
+		git checkout staging
+4:	git add text1.txt
+5:	git push --set-upstream origin staging		//push at remote branch
+6:	cd project2
+7:	git clone <url> clone_name
+8:  git checkout staging
+10: git add .
+git commit -m "msg"
+11: cd project1
+12: git checkout staging
+14: when pushing the changes, an error occurred- "failed to push some references" because it had to pull first.
+		git pull
+15: git checkout -b master
+16: git merge staging				//	merged staging in master
+17:	git checkout -b testing
+18:	git add .
+		git commit -m "testing branch's commit"
+20:	git push --set-upstream origin staging		//push at remote branch
+21:	 git checkout master
+22:  git add .
+		 git commit -m "msg"
+24:	 git push origin master
+25:	 git rebase testing			// 8 conflicts occurred as it made new commits in order to rebase
+			git rebase --continue
+26:  cd project2
+27:	 git fetch 			// to make sure that remote branch exists locally
+		git branch --track testing origin/testing		//track remote branch
+29:	 git merge testing	
+30:  Difference:
+		Merge - only one commit is done while resolving conflict-
+		the end of testing lead to H IS AN ALPHABET 
+		AND MASTER - 8 is a number
+		these two were merged.
+		Rebase - head (testing's end): H is alphabet 
+		Master's beginning commit - 1 is anumber 
+		and committed 8 times to resolve conflict till end of master.
+
+	
